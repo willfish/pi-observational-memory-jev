@@ -27,4 +27,16 @@ describe("loadConfig", () => {
 		expect(readEnvConfig({ PI_OM_PASSIVE: "1" }).passive).toBe(true);
 		expect(readEnvConfig({ PI_OM_PASSIVE: "0" }).passive).toBe(false);
 	});
+
+	it("reads enabledByDefault from settings and PI_OM_DEFAULT", () => {
+		const cwd = mkdtempSync(join(tmpdir(), "omj-default-"));
+		mkdirSync(join(cwd, ".pi"));
+		writeFileSync(
+			join(cwd, ".pi", "settings.json"),
+			JSON.stringify({ "observational-memory-jev": { enabledByDefault: true } }),
+		);
+		expect(loadConfig(cwd, {}).enabledByDefault).toBe(true);
+		expect(loadConfig(cwd, { PI_OM_DEFAULT: "0" }).enabledByDefault).toBe(false);
+		expect(readEnvConfig({ PI_OM_DEFAULT: "1" }).enabledByDefault).toBe(true);
+	});
 });

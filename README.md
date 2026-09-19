@@ -61,7 +61,8 @@ export TYPESAFE_API_KEY=...
 pi install git:github.com/willfish/pi-observational-memory-jev
 ```
 
-The extension is off until you turn it on for the current session:
+The package default is off. Turn it on for the current session, or set
+`enabledByDefault` so new sessions start on:
 
 ```text
 /om
@@ -88,6 +89,7 @@ pi -e ./src/index.ts
 ```jsonc
 {
   "observational-memory-jev": {
+    "enabledByDefault": true,
     "chunkTokens": 10000,
     "poolTargetTokens": 10000,
     "consolidateAtPoolTokens": 15000,
@@ -113,7 +115,7 @@ pi -e ./src/index.ts
 
 | Command | Effect |
 | --- | --- |
-| `/om`, `/om on`, `/om off` | Per-session on/off gate (default off) |
+| `/om`, `/om on`, `/om off` | Per-session on/off gate (package default off) |
 | `/om:status` | Workers, pool, clocks, Jev endpoint, last error |
 | `/om:compact` | Force compaction now |
 | `/om:consolidate` | Force consolidation now |
@@ -192,9 +194,9 @@ Jev in `models.json`; System One is not a chat-completions API.
 <details>
 <summary><strong>Compaction looks like pi's default summary</strong></summary>
 
-If the observational render is empty, pi's default compaction runs instead.
-Turn the gate on earlier in the session, or run `/om:compact` after observers
-have filled the ledger.
+While om is on, compaction uses the observational ledger and does not call
+pi's language-model summariser, even if the ledger is still empty. Turn the
+gate off with `/om off` to restore pi's default compact.
 
 </details>
 

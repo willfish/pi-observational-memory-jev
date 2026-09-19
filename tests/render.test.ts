@@ -1,9 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { renderSummary } from "../src/ledger/render.js";
+import { EMPTY_OM_COMPACTION_SUMMARY, renderSummary } from "../src/ledger/render.js";
 
 describe("renderSummary", () => {
 	it("returns empty when there is nothing to inject", () => {
 		expect(renderSummary(undefined, undefined, [])).toBe("");
+		expect(EMPTY_OM_COMPACTION_SUMMARY).toMatch(/language-model summariser was not used/);
 	});
 
 	it("renders journey, map and kind-tagged observations in order", () => {
