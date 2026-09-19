@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 420" role="img" aria-labelledby="title desc">
+  <title id="title">pi-observational-memory-jev</title>
+  <desc id="desc">Jev decides what to keep. Compaction never rewrites the transcript. Durable topic files survive the short-term buffer.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="55%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="420" rx="28" fill="url(#bg)"/>
+  <rect x="24" y="24" width="1232" height="372" rx="22" fill="none" stroke="#334155" stroke-width="2"/>
+  <text x="64" y="88" fill="#94a3b8" font-family="Noto Sans, Arial, Helvetica, sans-serif" font-size="18" letter-spacing="4">PI EXTENSION</text>
+  <text x="64" y="148" fill="#f8fafc" font-family="Noto Sans, Arial, Helvetica, sans-serif" font-size="42" font-weight="700">Observational memory, verbatim</text>
+  <text x="64" y="196" fill="#cbd5e1" font-family="Noto Sans, Arial, Helvetica, sans-serif" font-size="22">Jev decides keep and kind. The original line is what compaction prints.</text>
+
+  <g font-family="Noto Sans, Arial, Helvetica, sans-serif">
+    <rect x="64" y="236" width="280" height="88" rx="16" fill="#1e293b" stroke="#818cf8" stroke-width="2"/>
+    <text x="88" y="274" fill="#818cf8" font-size="14" letter-spacing="2">01  OBSERVE</text>
+    <text x="88" y="302" fill="#f8fafc" font-size="18">Cut history into chunks</text>
+
+    <rect x="372" y="236" width="280" height="88" rx="16" fill="#1e293b" stroke="#818cf8" stroke-width="2"/>
+    <text x="396" y="274" fill="#818cf8" font-size="14" letter-spacing="2">02  SCORE</text>
+    <text x="396" y="302" fill="#f8fafc" font-size="18">Jev: keep? what kind?</text>
+
+    <rect x="680" y="236" width="280" height="88" rx="16" fill="#1e293b" stroke="#34d399" stroke-width="2"/>
+    <text x="704" y="274" fill="#34d399" font-size="14" letter-spacing="2">03  RENDER</text>
+    <text x="704" y="302" fill="#f8fafc" font-size="18">No model rewrite</text>
+
+    <rect x="988" y="236" width="228" height="88" rx="16" fill="#1e293b" stroke="#fbbf24" stroke-width="2"/>
+    <text x="1012" y="274" fill="#fbbf24" font-size="14" letter-spacing="2">04  TOPICS</text>
+    <text x="1012" y="302" fill="#f8fafc" font-size="18">Durable files</text>
+  </g>
+
+  <text x="64" y="364" fill="#94a3b8" font-family="Noto Sans, Arial, Helvetica, sans-serif" font-size="16">facts.md · decisions.md · constraints.md · questions.md · corrections.md · hypotheses.md · JOURNEY.md</text>
+  <rect x="64" y="380" width="240" height="6" rx="3" fill="url(#accent)"/>
+</svg>
