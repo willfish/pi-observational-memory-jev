@@ -23,6 +23,27 @@ describe("extractCandidates", () => {
 		expect(candidates.every((c) => !c.text.includes("\n"))).toBe(true);
 	});
 
+	it("scores duplicate text once", () => {
+		const text = "The production database host is db-prod-7.internal. The production database host is db-prod-7.internal.";
+		const candidates = extractCandidates(
+			[
+				{
+					type: "message",
+					id: "m1",
+					message: { role: "user", content: [{ type: "text", text }] },
+				},
+				{
+					type: "message",
+					id: "m2",
+					message: { role: "user", content: [{ type: "text", text }] },
+				},
+			],
+			32,
+		);
+		expect(candidates).toHaveLength(1);
+		expect(candidates[0].text).toContain("db-prod-7.internal");
+	});
+
 	it("caps candidate count", () => {
 		const text = Array.from({ length: 20 }, (_, i) => `This is candidate sentence number ${i} about the work.`).join(
 			" ",
